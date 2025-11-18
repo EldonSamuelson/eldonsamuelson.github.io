@@ -1,0 +1,155 @@
+/* FONTS LIST
+    G-fonts:
+        Open Sans (Good for text and symbols)
+        Noto Sans (Good for text and symbols)
+        Catamaran (Only good for Headers, symbols iffy)
+        Sarala (Only good for text, symbols iffy, fixed weights)
+        
+*/
+
+/* Body colours are in hwb so the transparency is the same for all variants)*/
+.bodyCV {background-color: hwb(60 95% 0%);} 
+
+/*Divs*/
+ /* The sidebar main navigation menu */
+ .SidebarCV {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 11%; /* Set the width of the sidenav */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: hwb(210 0% 20%);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto; /* Lets you scroll to the other sidebar links if screen is too small or minimised */
+  }
+
+  /* The sidebar links */
+  .lin img {
+    margin-top: 5%;
+    margin-left: 35%
+  }
+
+  .SidebarCV p {
+    text-decoration: solid;
+    text-align: center;
+    font-size: 1.5vw;
+    font-family: 'Sarala', sans-serif;
+    color: #000000;
+    display: block;
+  }
+  
+  .SidebarCV a:hover {
+    color: #f1f1f1;
+  }
+
+  .SidebarCV {
+    background-color: hwb(89 53% 31%);
+  }
+
+  .SubBar-contentCV {
+    background-color: hwb(89 53% 31%);
+  }
+
+  .SubBar-contentCV a {
+    font-size: 1.3vw;
+    color: white;
+    text-decoration: none;
+    padding: 0.25em 0.25em 0.25em 0.25em;
+    text-decoration: solid;
+    text-align: center;
+    font-family: 'Sarala', sans-serif;
+    display: block;
+  }
+
+  .SubBar-contentCV a:hover {
+    background-color: #ffffff;
+    color: black; /*text colour*/
+  }
+
+  .SubBar:hover .SubBar-contentCV {
+    display: block;
+  }
+  
+  .MeCV {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 8%;
+  }
+
+/* Style Mainpage content */
+  .MainCV {
+    margin-left: 11%; /* Same as the width of sidenav */
+    padding: 0px 10px;
+  }
+
+  .BannerCV {
+    background-color: hwb(89 53% 31%);
+    position: relative;
+    z-index:2;
+    left:0;
+    top:0;
+    height: 10%;
+    width: 100%;
+    padding:0;
+    text-align: center;
+  }
+
+  .CVSkillsCol {
+  column-count: 3;
+  column-gap: 5vw;
+  column-rule: 1px solid black;
+  }
+
+/* Semantics */
+
+h1 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 2.5vw;
+    position: relative;
+    padding-top:0.25%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Sub Headers*/
+h2 {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 1.75vw;
+}
+
+h3 {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 1.2vw;
+}
+
+/* The talky bits*/
+p {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1vw;
+  text-align: justify;
+}
+
+li {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1vw;
+  text-align: justify;
+  margin-left: 15px; 
+}
+
+.MainCV a:link {
+  color: hwb(89 24% 54%)
+}
+
+.MainCV a:visited {
+  color: hwb(269 24% 34%)
+}
+
+.MainCV a:hover {
+  color: hwb(269 24% 14%)
+}
+
+.MainCV a:active {
+  color: hwb(89 24% 14%)
+}

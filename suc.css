@@ -8,7 +8,8 @@
 */
 
 /* Body colours are in hwb so the transparency is the same for all variants)*/
-.bodyCV {background-color: hwb(60 95% 0%);} 
+.bodyCV {background-color: hwb(60 95% 0%);
+} 
 
 /*Divs*/
  /* The sidebar main navigation menu */
@@ -19,32 +20,43 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: hwb(210 0% 20%);
+    background-color: hwb(89 53% 31%);
     overflow-x: hidden; /* Disable horizontal scroll */
-    overflow-y: auto; /* Lets you scroll to the other sidebar links if screen is too small or minimised */
+    overflow-y: auto; /* Lets you scroll to the other sidebar links if screen is too small*/
   }
 
-  /* The sidebar links */
+  /* Sidebar */
+  /* Profile Pic */
+  .MeCV {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 8%;
+  }
+
+  /* Icons */
   .lin img {
+    width: 1.25vw;
     margin-top: 5%;
-    margin-left: 35%
+    margin-left: 33%;
   }
 
+  .git img {
+    width: 1.25vw;
+  }
+  
+  .orc img {
+    width: 1.25vw;
+  }
+
+  /*Text*/
   .SidebarCV p {
     text-decoration: solid;
     text-align: center;
     font-size: 1.5vw;
     font-family: 'Sarala', sans-serif;
-    color: #000000;
+    color: hwb(0 0% 100%);
     display: block;
-  }
-  
-  .SidebarCV a:hover {
-    color: #f1f1f1;
-  }
-
-  .SidebarCV {
-    background-color: hwb(89 53% 31%);
   }
 
   .SubBar-contentCV {
@@ -63,24 +75,17 @@
   }
 
   .SubBar-contentCV a:hover {
-    background-color: #ffffff;
+    background-color: hwb(60 95% 0%);
     color: black; /*text colour*/
   }
 
   .SubBar:hover .SubBar-contentCV {
     display: block;
   }
-  
-  .MeCV {
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 8%;
-  }
 
 /* Style Mainpage content */
   .MainCV {
-    margin-left: 11%; /* Same as the width of sidenav */
+    margin-left: 11%; /* Same as the width of .SideBarCV sidenav */
     padding: 0px 10px;
   }
 
@@ -99,10 +104,14 @@
   .CVSkillsCol {
   column-count: 3;
   column-gap: 5vw;
-  column-rule: 1px solid black;
+  column-rule: 1px solid hwb(0 0% 100%);
   }
 
-/* Semantics */
+  .CVSkillsCol p {
+  margin-top: 0px;
+  }
+
+/* Text Semantics */
 
 h1 {
     font-family: 'Catamaran', sans-serif;
@@ -124,18 +133,21 @@ h3 {
   font-size: 1.2vw;
 }
 
-/* The talky bits*/
+/* The talky bits */
 p {
   font-family: 'Noto Sans', sans-serif;
   font-size: 1vw;
   text-align: justify;
 }
 
+ul {
+  margin-left:-25px; /*Aligns li bullets to p/header margins*/
+}
+
 li {
   font-family: 'Noto Sans', sans-serif;
   font-size: 1vw;
   text-align: justify;
-  margin-left: 15px; 
 }
 
 .MainCV a:link {
@@ -152,4 +164,9 @@ li {
 
 .MainCV a:active {
   color: hwb(89 24% 14%)
+}
+
+/*div class to make some sections invisible*/
+.hide {
+  display: none;
 }

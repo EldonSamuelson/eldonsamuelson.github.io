@@ -4,8 +4,20 @@
         Noto Sans (Good for text and symbols)
         Catamaran (Only good for Headers, symbols iffy)
         Sarala (Only good for text, symbols iffy, fixed weights)
-        
+    ExFonts:
+      HelveticaNeue-Roman
+      Circular Book ('The Designers Republic' font, for Headers)
+
 */
+@font-face {
+  font-family: HelveticaNeue-Roman;
+  src: url(https://exfont.com/wp-content/uploads/2024/11/HelveticaNeue-Roman.otf);
+}
+@font-face {
+  font-family: Circular Book;
+  src: url(https://exfont.com/wp-content/uploads/2025/02/Circular-Book.otf)
+}
+
 
 /* Body colours are in hwb so the transparency is the same for all variants)*/
 .bodyCV {background-color: hwb(60 95% 0%);
@@ -29,9 +41,7 @@
   /* Profile Pic */
   .MeCV {
     width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 8%;
+    margin: 8% 10% 0% 10%;
   }
 
   /* Icons */
@@ -53,8 +63,9 @@
   .SidebarCV p {
     text-decoration: solid;
     text-align: center;
-    font-size: 1.5vw;
-    font-family: 'Sarala', sans-serif;
+    font-size: 1.6vw;
+    line-height: 1.6;
+    font-family: 'Sarala', arial;
     color: hwb(0 0% 100%);
     display: block;
   }
@@ -65,18 +76,19 @@
 
   .SubBar-contentCV a {
     font-size: 1.3vw;
-    color: white;
+    color: hwb(60 95% 0%);
     text-decoration: none;
     padding: 0.25em 0.25em 0.25em 0.25em;
     text-decoration: solid;
     text-align: center;
-    font-family: 'Sarala', sans-serif;
+    font-family: 'Circular Book', arial;
+    line-height: 1.6;
     display: block;
   }
 
   .SubBar-contentCV a:hover {
     background-color: hwb(60 95% 0%);
-    color: black; /*text colour*/
+    color: hwb(0 0% 100%); /*text colour*/
   }
 
   .SubBar:hover .SubBar-contentCV {
@@ -84,9 +96,11 @@
   }
 
 /* Style Mainpage content */
+  /* Technically this is one page, so a Resumé */
+
   .MainCV {
     margin-left: 11%; /* Same as the width of .SideBarCV sidenav */
-    padding: 0px 10px;
+    padding: 0px 5%;
   }
 
   .BannerCV {
@@ -102,50 +116,64 @@
   }
 
   .CVSkillsCol {
-  column-count: 3;
-  column-gap: 5vw;
-  column-rule: 1px solid hwb(0 0% 100%);
+    column-count: 3;
+    column-gap: 1vw;
+    column-rule: 1px solid hwb(0 0% 100%);
+    padding: 0px 3.5%
   }
 
   .CVSkillsCol p {
-  margin-top: 0px;
+    margin-top: 0px;
+    line-height: 1.6;
   }
 
 /* Text Semantics */
 
 h1 {
-    font-family: 'Catamaran', sans-serif;
-    font-size: 2.5vw;
-    position: relative;
-    padding-top:0.25%;
-    margin-top: 0;
-    margin-bottom: 0;
+  font-family: 'Catamaran', arial;
+  font-size: 2.5vw;
+  position: relative;
+  padding-top:0.25%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Sub Headers*/
+
 h2 {
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Circular Book', arial;
   font-size: 1.75vw;
 }
 
 h3 {
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Circular Book', arial;
   font-size: 1.2vw;
 }
 
+  .pro {
+    font-family: 'Noto Sans', arial;
+    padding: 0px 5%;
+    margin: -0.5% -0.5%;
+  }
+
 /* The talky bits */
+
 p {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', arial;
   font-size: 1vw;
   text-align: justify;
+  line-height: 1.6;
+  padding: 0px 5%
 }
 
 ul {
-  margin-left:-25px; /*Aligns li bullets to p/header margins*/
+  margin-left: 20px; /*Aligns li bullets to p/header margins*/
+  line-height: 1.6;
+  padding: 0px 5%;
 }
 
 li {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', arial;
   font-size: 1vw;
   text-align: justify;
 }

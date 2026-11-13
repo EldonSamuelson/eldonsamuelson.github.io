@@ -18,7 +18,6 @@
   src: url(https://exfont.com/wp-content/uploads/2025/02/Circular-Book.otf)
 }
 
-
 /* Body colours are in hwb so the transparency is the same for all variants)*/
 .bodyCV {background-color: hwb(60 95% 0%);
 } 
@@ -122,13 +121,21 @@
   .CVSkillsCol {
     column-count: 3;
     column-gap: 1vw;
-    column-rule: 1px solid hwb(0 0% 100%);
+    column-rule: 0.15vw solid hwb(0 0% 100%);
     padding: 0px 3.5%
+  }
+
+   .CVSkillsCol b {
+    font-size: 1vw;
+    font-family: 'Noto Sans', arial;
+    line-height: 1.6;
+    padding: 0px 2.5%
   }
 
   .CVSkillsCol p {
     margin-top: 0px;
     line-height: 1.6;
+    padding: 0px 5%
   }
 
 /* Text Semantics */
@@ -138,8 +145,7 @@ h1 {
   font-size: 2.5vw;
   position: relative;
   padding-top:0.25%;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 ;
 }
 
 /* Sub Headers*/
@@ -147,6 +153,7 @@ h1 {
 h2 {
   font-family: 'Circular Book', arial;
   font-size: 1.75vw;
+  margin: 1.1vw 0vw;
 }
 
 h3 {
@@ -198,7 +205,13 @@ li {
   color: hwb(89 24% 14%)
 }
 
-/*div class to make some sections invisible*/
+/*Divs to make some sections invisible*/
+/* The AI one (only shown when CSS fails, which is fine)*/
+.thinkingsilica {
+  display: none;
+}
+
+/* JS-based for different buttons*/
 .hide {
   display: none;
 }

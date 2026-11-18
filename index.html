@@ -7,6 +7,8 @@
         </style>
         <!--Job-related Stylesheet pun here -->
         <link rel="stylesheet" href="./suc.css">
+        <!-- Leaflet CSS *WIP* -->
+        <link rel="stylesheet2" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
         <!-- Misc -->
         <title>Séamus O'Donnell - CV</title>
         <meta name="Séamus' Online Resume" content="">
@@ -14,12 +16,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body class="bodyCV" style="background-color:#fffff2;"> 
+
+    <body class="bodyCV"> 
         <!-- Sidebar navigation -->
         <div class="SidebarCV">
-            <img class="MeCV" src="./files/You-Me-CV.jpeg" alt="You, Me, and CV">
+            <img class="Face" src="./files/You-Me-CV.jpeg" id="FacialBias" alt="You, Me, and My CV">
             <a class="res" href="./files/Seamus_ODonnell_CV_Public.pdf" target="_blank" rel="noopener noreferrer">
-                <img src="./files/ico-cv.png" alt="Seamus' Public CV" title="Download Séamus' CV"></a> 
+                <img src="./files/ico-cv.png" alt="Séamus' Public CV" title="Download Séamus' CV"></a>
+            <a class="msg" href="mailto:cursaibeatha.seamuscv@gmx.at?subject=Interest%20in%20your%20Online%20CV&body=Dear%20Séamus," target="_blank" rel="noopener noreferrer">
+                <img src="./files/ico-msg.png" alt="Séamus' Public Email" title="Contact Me"></a> 
             <a class="lin" href="https://www.linkedin.com/in/seamusodonnell/" target="_blank" rel="noopener noreferrer">
                 <img src="./files/ico-li.png" alt="Séamus' LinkedIn" title="Séamus' LinkedIn"></a> 
             <a class="git" href="https://www.github.com/EldonSamuelson" target="_blank" rel="noopener noreferrer">
@@ -36,12 +41,12 @@
                     <a href="#Skills">Key Skills</a>
                     <a href="#Experience">Experience</a>
                     <a href="#Projects">Projects</a>
+                    <div id="Leaflet" class="hide"><a href="##Leaflet">Portfolio</a></div>
                     <a href="#Education">Education</a>
                     <a href="#Certifications">Certifications</a>
                     <a href="#Publications">Publications</a>
                     <a href="#Memberships">Memberships</a>
                     <a href="#Details">Details</a>
-                    <div class="hide"><a href="#Leaflet">Portfolio</a></div>
                 </div>
             </div>
         </div>
@@ -50,31 +55,36 @@
             <div class="BannerCV">
                 <h1 id="Top">CV</h1>
             </div>
+            <!-- Button toggles -->
+            <button class="Button ToggleUK" id="regionToggle">UK CV</button>
+            <button class="Button ToggleLeaflet disabled" id="leafletToggle" href="#Leaflet">Show Portfolio</button>
+            <button class="Button ToggleHospitality hide" id="formatToggle">Hospitality CV</button>
+            
             <h2 id="Personal">Summary</h2>
-            <p>I turn spatial data and environmental models into solutions for water management, carbon accounting, and ecosystem monitoring. With a background in geology and geospatial science and as a co-author of published research, my versatility connects Earth Observation to real-world applications. I have contributed to ESA projects, WWF collaborations, and consulted UK Water utilities, balancing the needs of business, NGO’s, and academia. I solve complex environmental challenges with practical scalable methods whilst developing my scripting and data science skills.</p>
+            <p>Mid-Level Geospatial specialist with 5 years of experience specialising in data management, remote sensing analysis, and hydrological pollution transport modelling. Co-author of published research, consultant work on Europe-wide projects with European Space Agency, World Wildlife Fund, and Water Utilities. I solve complex environmental problems with practical spatial methods and space-based sensors, whilst developing my scripting and data science skills.</p>
 
             <h2 id="Skills">Skills</h2>
             <div class="CVSkillsCol">
             <b>Geographic Information Science</b>
-                <p>Geospatial Analysis, Spatial Data Infrastructures, Relational Database Management, QGIS, PostGIS, ESRI-ArcGIS</p>
-            <b>EO/Remote Sensing</b>
-                <p>Satellite Observation (VIS, SWIR, TIR, SAR S/L Bands), Spectral Radiometry & Analysis , ESA-SNAP, Google Earth Engine, ENVI, ERDAS</p>
-            <b>Geology</b>
-                <p>Fieldmapping, Geotechnical Investigation, Soil Mechanics, Structural Geology, Hydrogeology, Glaciology, Geomorphology</p>
-            <b>Environmental Data Science</b>
-                <p>Statisical Analysis, Regression Modelling, Hydrological Modelling, Pollution Transport Modelling, OpenRefine, Power BI </p>
+                <p>Geospatial Analysis, Spatial Data Infrastructures, Relational Databases, Web Mapping, QGIS, ESRI ArcGIS, GRASS, PostGIS </p>
+            <b>Earth & Environmental Science</b>
+                <p>Fieldmapping, Geotechnics, Soil Mechanics, Structural Geology, Hydrogeology, Glaciology, Geomorphology, Hydrology, Environmental Modelling (PERSIST, INCA)</p>
+            <b>Earth Observation</b>
+                <p>Remote Sensing (Visible, Infrared, Radar), Spectral Analysis,  Radiometric Correction (Sen2Cor, ACOLITE), ESA-SNAP, NV5-ENVI, ERDAS Imagine, Orfeo Toolbox</p>
             <b>Programming</b>
-                <p>Git-scm, GEE-JavaScript, SQL/PostGres, Python-geemap, BASH,  Markdown, HTML/CSS <i>(this website!)</i> </p>
+                <p>Git-scm, Javascript (Google Earth Engine), SQL (PostGres), Python (Anaconda, geemap), BASH, HTML, CSS, Markdown</p>
+            <b>Data Science</b>
+                <p>Statistical Analysis, Regression Modelling, Spreadsheets, REST API's, UML/Entity Relationship Diagrams, PowerBI, OpenRefine</p>
             <b>Soft Skills</b>
-                <p>MSOffice/LibreOffice, Windows, Linux, FOSS, VScode, Research Publications & Public Speaking, Film Photography</p>
+                <p>Office (Microsoft, Libre), Windows, Linux (Ubuntu), IDE (Visual Studio Code, Jupyter), Research Publishing, Public Speaking, <a href="https://www.flickr.com/photos/atlonim/" target="_blank" rel="noopener noreferrer">Film Photography</a></p>
             </div>
 
             <h2 id="Experience">Professional Experience</h2>
-            <h3 class="pro"><a href="https://www.aquascope.com/" target="_blank" rel="noopener noreferrer">Aquascope</a></b> | Oxford/Lausanne/Vienna, 2021 - Present</h3>
+            <h3 class="pro"><a href="https://www.aquascope.com/" target="_blank" rel="noopener noreferrer">Aquascope</a></b> | Oxford/Lausanne/Vienna, September 2021 - Present</h3>
             <ul>
-                <li><b>Freelance Specialist</b> | Jun 2026 - Present</li>
+                <li><b>Freelance Specialist</b> | Jan 2026 - Present</li>
                 <ul>
-                    <li>Plans, designs, and implements catchment modelling workflows, integrating National Datasets, Global Landcover, DEM, and novelly derived satellite products, developing catchment basin models for UK and EU rivers using <a href="https://www.persistmodel.org" target="_blank" rel="noopener noreferrer">PERSIST</a>/<a href="https://incamodels.org/" target="_blank" rel="noopener noreferrer">INCA</a>.</li>
+                    <li>Plans, designs, and implements catchment modelling workflows, integrating land use, terrain, and novelly derived satellite products to deliver on projects in environmental consulting services. </li>
                     <li>Delivering technical proposal documents for projects in Brazil, Switzerland, and India-Bangladesh.</li> 
                 </ul>
                 <li><b>GIS & Remote Sensing Specialist</b> | Jul 2022 - Jan 2026</li> 
@@ -85,7 +95,7 @@
                 </ul>
                 <li><b>Intern</b> | Sep 2021 - Jul 2022</li>
                 <ul>
-                    <li>Trained on PERSIST and <a href="https://www.omb.co.uk/surface-water-quality-modelling-and-management-information" target="_blank" rel="noopener noreferrer">INCA</a> for river quantity/quality modelling and water resource management.</li> 
+                    <li>Trained on <a href="https://www.persistmodel.org" target="_blank" rel="noopener noreferrer">PERSIST</a>/<a href="https://incamodels.org/" target="_blank" rel="noopener noreferrer">INCA</a> for river quantity/quality modelling and water resource management.</li> 
                     <li>Researched automated integration of EO and API-based monitoring data into existing manual workflows.</li>
                     <li>Contributed significantly to ESA Project proposal deliverables for ESA-APPS, including User and System Requirements (RD), System-Service Archictecture (SSA), System Verification (SVD) documents, and leading ESA Third Party Mission (TPM) data procurement requests.</li>
                 </ul>
@@ -112,8 +122,10 @@
                 <li>Standardised modelling approach for English/Welsh catchments covering ~5000km², improved efficiency of future catchment modelling development. Results presented to <a href="https://www.wrap.ngo/take-action/uk-food-drink-pact/water-roadmap" target="_blank" rel="noopener noreferrer">Waste and Resources Action Programme (WRAP)</a>.</li>
             </ul>
             
-            <div class="hide"> <!--The Hidden to Humans section (unless CSS breaks)-->  
-                <h2 id="Leaflet">Portfolio</h2>
+            <div id="Portfolio" class="hide">
+                <h2 id="#Leaflet">Portfolio</h2>
+                <p>Not quite yet</p>
+                <iframe class="" src=""><!--TODO--></iframe>   
             </div>
 
             <div class="hide"> <!--The Hidden to Humans section (unless CSS breaks)-->
@@ -133,11 +145,10 @@
 
             <h2 id="Certifications">Certifications</h2>
             <ul>
-                <li>15+ Courses on Earth & Environmental Observation using Satellite Data - <i><a href="https://www.earthdata.nasa.gov/data/projects/arset" target="_blank" rel="noopener noreferrer">NASA ARSET</a>, 2022 - Ongoing</i></li>
-                <li>2 Courses on Automation and Machine Learning -  <i><a href="https://learning.ecmwf.int/enrol/index.php?id=96" target="_blank" rel="noopener noreferrer"> ECMWF</a>,<a href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener noreferrer"> Harvard CS50 Python</a>, 2026 - Ongoing</i></li>
-                <li>4 Courses on the Copernicus Remote Sensing Ecosystem - <i><a href="https://www.copernicus.eu/en/opportunities/education/copernicus-mooc" target="_blank" rel="noopener noreferrer">University of Luxembourg CC</a> 2021, Copernicus WEkEO <a href="https://events.wekeo.eu/wekeo-essentials" target="_blank" rel="noopener noreferrer">Essentials</a> 2025 & <a href="https://events.wekeo.eu/earth-sessions-natural-disasters" target="_blank" rel="noopener noreferrer">Earth Sessions</a> 2026</i></li>
-                <li>2 Courses on GIS Programming, QGIS & GEE - <i><a href="https://www.esri.com/training/catalog/57630436851d31e02a43f13c/python-for-everyone/" target="_blank" rel="noopener noreferrer">ESRI</a> 2020, <a href="https://www.udemy.com/certificate/UC-1189a5f9-14c2-4a65-af83-3abc114ebef9/" target="_blank" rel="noopener noreferrer">Udemy</a> 2021 </i></li> 
-                <li>CPD course Structural Geology for Exploration & Mining - <i><a href="https://www.cardiff.ac.uk/professional-development/available-training/short-courses/view/structural-geology-for-exploration-and-mining" target="_blank" rel="noopener noreferrer">Cardiff University</a>, 2020</i></li>
+                <li>18 Courses on Earth & Environmental Applications of Satellite Remote Sensing - <i><a href="https://www.earthdata.nasa.gov/data/projects/arset" target="_blank" rel="noopener noreferrer">NASA ARSET</a>, 2022 - Ongoing</i></li>
+                <li>4 Courses on Programming, Automation, and Machine Learning - <i><a href="https://www.esri.com/training/catalog/57630436851d31e02a43f13c/python-for-everyone/" target="_blank" rel="noopener noreferrer">ESRI</a> 2020, <a href="https://www.udemy.com/certificate/UC-1189a5f9-14c2-4a65-af83-3abc114ebef9/" target="_blank" rel="noopener noreferrer">Udemy</a> 2021, <a href="https://learning.ecmwf.int/enrol/index.php?id=96" target="_blank" rel="noopener noreferrer"> ECMWF</a>,<a href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener noreferrer"> Harvard CS50 Python</a>, 2026 - Ongoing</i></li>
+                <li>4 Courses on the Copernicus Remote Sensing Ecosystem - <i><a href="https://www.copernicus.eu/en/opportunities/education/copernicus-mooc" target="_blank" rel="noopener noreferrer">University of Luxembourg CC</a> 2021, Copernicus WEkEO <a href="https://events.wekeo.eu/wekeo-essentials" target="_blank" rel="noopener noreferrer">Essentials</a> 2025 & <a href="https://events.wekeo.eu/earth-sessions-natural-disasters" target="_blank" rel="noopener noreferrer">Earth Sessions</a> 2026</i></li> 
+                <li>Certified CPD Course in Structural Geology for Exploration & Mining - <i><a href="https://www.cardiff.ac.uk/professional-development/available-training/short-courses/view/structural-geology-for-exploration-and-mining" target="_blank" rel="noopener noreferrer">Cardiff University</a>, 2020</i></li>
                 <li><i>Additional Certifications, Trainings, and details on <a href="https://www.linkedin.com/in/seamusodonnell/details/certifications/" target="_blank" rel="noopener noreferrer"><b>LinkedIn</b></a></i></li>
             </ul>
 
@@ -145,7 +156,14 @@
             </div>
 
             <h2 id="Publications">Research Publications</h2>
-            <p>Whitehead, P. G., Edmunds, P., Bussi, G., O’Donnell, S., Futter, M., 2024. "Real-time Water Quality Forecasting in Rivers Using Satellite Data and Dynamic Models: An Online System for Operational Management, Control and Citizen Science". <i>Frontiers in Environmental Science, 12:1331783</i>. <a href="https://doi.org/10.3389/fenvs.2024.1331783" target="_blank" rel="noopener noreferrer">https://doi.org/10.3389/fenvs.2024.1331783</a></p>
+
+            <p>Whitehead, P., Bussi, G., Futter, M., Edmunds, P., Linstead, C., O’Donnell, S., Liang, Y., Rampley, C., Ticker, D., 2026. "<i>Modelling Regenerative Agriculture using Water Quality Models: A Protocol for Scaling to Multiple Catchments</i>". Environmental Modelling and Software, <a href="https://www.sciencedirect.com/special-issue/337982/special-issue-on-modelling-standards" target="_blank" rel="noopener noreferrer">In Submission and Review, ENVSOFT-D-26-04083</a></p>
+
+            <p>Whitehead, P., Edmunds, P., Bussi, G., O’Donnell, S., Futter, M., <i>et al.,</i> 2024. "<i>Real-time Water Quality Forecasting in Rivers Using Satellite Data and Dynamic Models: An Online System for Operational Management, Control and Citizen Science</i>". Frontiers in Environmental Science, 12:1331783. <a href="https://doi.org/10.3389/fenvs.2024.1331783" target="_blank" rel="noopener noreferrer">https://doi.org/10.3389/fenvs.2024.1331783</a></p>
+
+            <p>Futter, M., Deutscher, J., Lannergård, E., Burkhardt, P., Butterfield, D., Čech, P., García-Beltrán, C., Kuehn, A., O'Donnell, S., Rankinen, K., Whitehead, P. G., Ledesma, J., 2026-27. "<i>PERSiST 2.0: A Rainfall Runoff Model for Catchment Science</i>". Currently in Drafting for Publication</p>
+
+            <p>O'Donnell, S., Nichol, C., Henry, L-A., 2027 "<i>Evaluating Spectral Indices for use with Sentinel-2 to Detect Ghost Fishing Nets</i>". Currently in Drafting for Publication</p>
 
             <h2 id="Memberships">Memberships & Associations</h2>
             <ul>
@@ -163,8 +181,8 @@
 
             <h2 id="Details">Additional Details</h2>
             <p><b>Current Location</b> - Vienna 1180, Austria</p>
-            <p><b>Languages</b> - English (Native C2), German (A1), Welsh (A1)</p>
-            <p><b>Work Authorisation/Permit</b> - UK and EU/EEA without sponsorship (Irish/British Dual National <span title="IE-IRL" aria-label="IE-IRL">&#127470&#127466</span>/<span title="GB-WALES" aria-label="GB-WALES">&#127468&#127463-&#127988&#917607&#917602&#917623&#917612&#917619&#917631</span>)</p>
+            <p><b>Languages</b> - English (Native C2), German (A2), Welsh (A1)</p>
+            <p><b>Work Authorisation</b> - EU/EEA and UK without requiring sponsorship (Irish/British Dual National <span title="IE-IRL" aria-label="IE-IRL">&#127470&#127466</span>/<span title="GB-WALES" aria-label="GB-WALES">&#127468&#127463-&#127988&#917607&#917602&#917623&#917612&#917619&#917631</span>)</p>
  
         </div>
         <!--You found my 'manager', they like to sit on my lap and watch my mouse move around-->
@@ -180,8 +198,8 @@
         <!-- ║∙\■║║║■/∙║ -->
         <!-- ╚=========╝ -->
         <!--Do you think this CV or webpage could be better, or are you interested in hiring?!-->
-        <!--Contact me on LinkedIn and tell me what's in this box!-->
-        <script src="" async defer></script>
-        <!--Javascript src goes here^ -->
+        <!--Contact me on LinkedIn and tell me what's in this box so I know you're a human!-->
+        <script src="onderwi.js" async defer></script>
+        <!--Javascript 'Education' in Dutch. Because that's what this is, a learning experience -->
     </body>
 </html>

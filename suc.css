@@ -19,14 +19,14 @@
 }
 
 /* Body colours are in hwb so the transparency is the same for all variants)*/
-.bodyCV {background-color: hwb(60 95% 0%);
+.bodyCV {background-color: hwb(40 95% 0%);
 } 
 
 /*Divs*/
  /* The sidebar main navigation menu */
  .SidebarCV {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 11%; /* Set the width of the sidenav */
+    width: 12vw; /* Set the width of the sidenav */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -38,18 +38,24 @@
 
   /* Sidebar */
   /* Profile Pic */
-  .MeCV {
+  .Face {
     width: 80%;
     margin: 8% 10% 0% 10%;
+    border-radius: 10%;
   }
 
   /* Icons */
   .res img {
     width: 1.25vw;
-    margin-top: 5%;
-    margin-left: 25%;
+    margin-top: 0.75vw;
+    margin-left: 2.25vw;
   }
   
+  .msg img{
+    width: 1.25vw;
+    margin-bottom: 0.05vw; /* Design trick for bottom-weighted images*/
+  }
+
   .lin img {
     width: 1.25vw;
   }
@@ -71,6 +77,7 @@
     font-family: 'Sarala', arial;
     color: hwb(0 0% 100%);
     display: block;
+    margin: 0.5vw
   }
 
   .SubBar-contentCV {
@@ -79,7 +86,7 @@
 
   .SubBar-contentCV a {
     font-size: 1.3vw;
-    color: hwb(60 95% 0%);
+    color: hwb(40 95% 0%);
     text-decoration: none;
     padding: 0.25em 0.25em 0.25em 0.25em;
     text-decoration: solid;
@@ -90,7 +97,7 @@
   }
 
   .SubBar-contentCV a:hover {
-    background-color: hwb(60 95% 0%);
+    background-color: hwb(40 95% 0%);
     color: hwb(0 0% 100%); /*text colour*/
   }
 
@@ -102,7 +109,7 @@
   /* Technically this is one page, so a Resumé */
 
   .MainCV {
-    margin-left: 11%; /* Same as the width of .SideBarCV sidenav */
+    margin-left: 10.5vw; /* Roughly same width of .SideBarCV sidenav */
     padding: 0px 5%;
   }
 
@@ -117,6 +124,33 @@
     padding:0;
     text-align: center;
   }
+
+  /* Button bits*/
+  .Button {
+    background-color: hwb(89 53% 31%);
+    color: white; /* Font */
+    border-radius: 0.25vw;
+    padding: 0.75vw;
+    width: 11%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    font-family: 'Circular Book', arial;
+    margin: 0.5% 0vw 0vw 0vw;
+    cursor: pointer;
+  }
+    .Button:hover {
+      opacity: 0.8;
+    }
+    .disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transition-duration: 1s;
+    }
+      .disabled:hover {
+        background-color: red;
+      }
 
   .CVSkillsCol {
     column-count: 3;
@@ -153,7 +187,7 @@ h1 {
 h2 {
   font-family: 'Circular Book', arial;
   font-size: 1.75vw;
-  margin: 1.1vw 0vw;
+  margin: 1vw 0vw 1vw 0vw;
 }
 
 h3 {
